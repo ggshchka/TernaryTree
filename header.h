@@ -29,13 +29,10 @@ private:
 	void map_str(Node<T>*, tree &);
 	void where(Node<T>*, tree&);
 	void where_complex(Node<T>*, tree &, T, T);
-	/*T int_to_string(T str);
-	void where_str(Node<T>*, tree&);*/
 	void merger(Node<T>*, tree&);
 	void ejection_help(Node<T>*, tree&);
 	Node<T>* search_ejection(Node<T>* temp, T elem); 
 	void ejection(Node<T>*, tree&, T);
-	//bool compare_tree(Node<T>* temp1, Node<T>* temp2);
 	bool equal_tree(Node<T>*, Node<T>*);
 	void filing(Node<T>*, ofstream &);
 public:
@@ -51,10 +48,9 @@ public:
 	void add_el(T element);
 	void print_el();
 	void map_quad_el(tree &);
-	void map_str_el(tree &); // Error
+	void map_str_el(tree &); 
 	void where_el(tree&);
 	void where_complex_el(tree &);
-	//void where_str_el(tree&);
 	void merger_el(tree&);
 	void ejection_el(tree&, T);
 	bool search_tree(tree &A);
@@ -324,32 +320,6 @@ void tree<T>::where_complex_el(tree &A)
 	}
 }
 
-/*template <class T>
-T tree<T>::int_to_string(T str)
-{
-	int length = str.length();
-	ostringstream ss;
-	ss << length;
-	return ss.str();
-}
-
-template <class T>
-void tree<T>::where_str(Node<T>* temp, tree &A)
-{
-	T a = int_to_string(temp->data);
-	A.add_el(a);
-	where_str(temp->left, A);
-	where_str(temp->middle, A);
-	where_str(temp->right, A);
-}
-
-template <class T>
-void tree<T>::where_str_el(tree &A)
-{
-	where_str(root, A);
-}*/
-
-
 template <class T>
 void tree<T>::merger(Node<T>* temp, tree &A)
 {
@@ -424,19 +394,6 @@ bool tree<T>::search_tree(tree &A)
 		return false;
 }
 
-/*template <class T>
-bool tree<T>::compare_tree(Node<T>* temp1, Node<T>* temp2)
-{
-	if ((temp1 != NULL)&&(temp2 != NULL))
-	{
-		if (temp1->data == temp2->data)
-			return true && compare_tree(temp1->left, temp2->left)&&compare_tree(temp1->middle, temp2->middle)&&compare_tree(temp1->right, temp2->right);
-		else return false;
-	}
-	else
-		return false;
-}*/
-
 template <class T>
 bool tree<T>::equal_tree(Node<T>* temp1, Node<T>* temp2)
 {
@@ -483,10 +440,6 @@ void tree<T>::filing_el()
 	filing(root, fout);
 	fout.close();
 }
-
-
-
-
 
 //*--------- Методы класса complex ----------------------------------------
 
